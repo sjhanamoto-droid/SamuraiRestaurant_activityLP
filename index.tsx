@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { MapPin, Clock, Users, ChevronDown, Star, CheckCircle, Info, Calendar, Phone, Utensils, Coffee } from 'lucide-react';
+import { MapPin, Clock, Users, ChevronDown, Star, CheckCircle, Info, Calendar, Phone, Utensils, Coffee, Crown, Sparkles, Flame } from 'lucide-react';
 
 // --- Types ---
 interface RevealProps {
@@ -243,6 +243,103 @@ const ExperienceMenu = () => {
   );
 };
 
+const PremiumPlan = () => {
+  return (
+    <section className="py-20 bg-[#121212] relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C5A059] to-transparent opacity-50"></div>
+      <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#C5A059]/5 rounded-full blur-3xl"></div>
+      <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#C5A059]/5 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <Reveal>
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 border border-[#C5A059] text-[#C5A059] text-xs tracking-[0.2em] uppercase mb-4">
+              Premium
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              The Ultimate Kyoto Plan
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              "I want to do it all, but time is short."<br/>
+              We created this comprehensive plan just for you. Experience culture and a luxurious feast in one session.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={200}>
+          <div className="bg-gradient-to-br from-[#1E1E1E] to-[#252525] border border-[#C5A059]/30 rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2">
+              <div className="relative h-64 md:h-auto group">
+                 <img 
+                   src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" 
+                   alt="Wagyu and Japanese Cuisine" 
+                   className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent md:bg-gradient-to-r"></div>
+                 <div className="absolute bottom-6 left-6 text-white">
+                    <div className="flex items-center gap-1 mb-2">
+                      <Star className="w-4 h-4 text-[#C5A059] fill-[#C5A059]" />
+                      <Star className="w-4 h-4 text-[#C5A059] fill-[#C5A059]" />
+                      <Star className="w-4 h-4 text-[#C5A059] fill-[#C5A059]" />
+                      <Star className="w-4 h-4 text-[#C5A059] fill-[#C5A059]" />
+                      <Star className="w-4 h-4 text-[#C5A059] fill-[#C5A059]" />
+                    </div>
+                    <p className="font-bold text-2xl font-serif">All-Inclusive Luxury</p>
+                    <p className="text-sm text-gray-300 mt-1">Experience + 5-Course Meal</p>
+                 </div>
+              </div>
+
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold text-[#C5A059] mb-6 flex items-center">
+                  <Crown className="w-6 h-6 mr-3" />
+                  What's Included
+                </h3>
+                
+                <div className="space-y-8 mb-8">
+                  <div>
+                    <h4 className="text-white font-bold text-lg flex items-center mb-3">
+                      <span className="w-1.5 h-1.5 bg-[#C5A059] rounded-full mr-3"></span>
+                      Mini Cultural Experiences
+                    </h4>
+                    <p className="text-gray-400 text-sm ml-4 pl-0.5 leading-relaxed">
+                      Compact versions of our signature activities. Try your hand at <strong>Sushi Making</strong> and <strong>Matcha Whisking</strong> efficiently without the long commitment.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-white font-bold text-lg flex items-center mb-3">
+                      <span className="w-1.5 h-1.5 bg-[#C5A059] rounded-full mr-3"></span>
+                      5-Course Japanese Feast
+                    </h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-300 text-sm ml-4 pl-0.5">
+                      <li className="flex items-center"><Flame className="w-4 h-4 mr-2 text-red-400"/> Wagyu Sukiyaki</li>
+                      <li className="flex items-center"><Utensils className="w-4 h-4 mr-2 text-[#C5A059]"/> Wagyu Steak</li>
+                      <li className="flex items-center"><Utensils className="w-4 h-4 mr-2 text-[#C5A059]"/> Unagi (Eel)</li>
+                      <li className="flex items-center"><Utensils className="w-4 h-4 mr-2 text-[#C5A059]"/> Authentic Ramen</li>
+                      <li className="flex items-center"><Utensils className="w-4 h-4 mr-2 text-[#C5A059]"/> Seasonal Sushi</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between border-t border-white/10 pt-6 gap-4">
+                  <div>
+                     <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Package Price</p>
+                     <p className="text-3xl font-bold text-white">¥30,000 <span className="text-sm font-normal text-gray-500">/ person</span></p>
+                  </div>
+                  <a href="#booking" className="bg-[#C5A059] hover:bg-[#b08d4b] text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm transition-all shadow-lg shadow-[#C5A059]/20 hover:shadow-[#C5A059]/40 flex items-center justify-center">
+                    Book Premium
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
 const WhyUs = () => {
   const features = [
     { title: "Professional Chef", icon: <Utensils className="w-6 h-6" />, desc: "Direct guidance from Chef Keigo Morisawa." },
@@ -397,7 +494,7 @@ const FAQ = () => {
 const Booking = () => {
   return (
     <section id="booking" className="py-20 bg-[#1a1a1a] text-white">
-      <div className="container mx-auto px-6 max-w-4xl text-center">
+      <div className="container mx-auto px-6 max-w-6xl text-center">
         <Reveal>
           <h2 className="text-4xl font-bold mb-6 text-[#C5A059]">Book Your Experience</h2>
           <p className="text-xl text-gray-300 mb-6">Reservations accepted until 1:00 PM on the day before.</p>
@@ -406,7 +503,7 @@ const Booking = () => {
              For inquiries, please contact Keigo at 070-3609-0830
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
              <div className="bg-white/5 border border-white/10 p-8 rounded-lg hover:border-[#C5A059] transition-all relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-2 bg-[#C5A059] text-xs font-bold uppercase">Popular</div>
                 <h3 className="text-2xl font-bold mb-4">Sushi Experience</h3>
@@ -425,6 +522,17 @@ const Booking = () => {
                 <button className="w-full bg-[#6B8C42] hover:bg-[#5a7637] text-white font-bold py-4 rounded transition-colors uppercase tracking-widest flex items-center justify-center">
                    <Calendar className="mr-2 w-5 h-5" />
                    Book Matcha
+                </button>
+             </div>
+
+             <div className="bg-gradient-to-b from-[#1E1E1E] to-black border border-[#C5A059]/50 p-8 rounded-lg hover:shadow-[0_0_20px_rgba(197,160,89,0.3)] transition-all">
+                <div className="flex justify-center mb-2"><Crown className="text-[#C5A059] w-6 h-6"/></div>
+                <h3 className="text-2xl font-bold mb-4 text-[#C5A059]">Ultimate Plan</h3>
+                <p className="text-gray-400 mb-2">Experience + 5 Courses</p>
+                <p className="text-3xl font-bold text-white mb-6">¥30,000 <span className="text-sm font-normal text-gray-400">/ person</span></p>
+                <button className="w-full bg-transparent border border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-white font-bold py-4 rounded transition-colors uppercase tracking-widest flex items-center justify-center">
+                   <Sparkles className="mr-2 w-5 h-5" />
+                   Book Premium
                 </button>
              </div>
           </div>
@@ -467,6 +575,7 @@ const App = () => {
           <Navbar />
           <Hero />
           <ExperienceMenu />
+          <PremiumPlan />
           <WhyUs />
           <RecommendedFor />
           <Access />
